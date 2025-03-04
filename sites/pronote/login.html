@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - Lycée International de Londres Winston Churchill</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaeaea;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin: 50px auto;
+        }
+        .logo {
+            width: 100px;
+        }
+        h2 {
+            font-size: 18px;
+            color: #333;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn {
+            width: 100%;
+            background-color: #666;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        .btn:disabled {
+            background-color: #ccc;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="logo.png" alt="Logo Lycée" class="logo">
+        <h2>Espace Élèves</h2>
+        
+        <label for="identifiant">Identifiant *</label>
+        <input type="text" id="identifiant" placeholder="Saisissez votre identifiant">
+
+        <label for="password">Mot de passe *</label>
+        <input type="password" id="password" placeholder="Saisissez votre mot de passe">
+
+        <button class="btn" id="loginButton" disabled>Se connecter</button>
+
+        <p class="footer">Toutes vos données sont hébergées en France - INDEX ÉDUCATION</p>
+    </div>
+
+    <script>
+        const identifiant = document.getElementById('identifiant');
+        const password = document.getElementById('password');
+        const loginButton = document.getElementById('loginButton');
+
+        function checkInputs() {
+            if (identifiant.value.trim() !== '' && password.value.trim() !== '') {
+                loginButton.disabled = false;
+            } else {
+                loginButton.disabled = true;
+            }
+        }
+
+        identifiant.addEventListener('input', checkInputs);
+        password.addEventListener('input', checkInputs);
+    </script>
+
+</body>
+</html>
